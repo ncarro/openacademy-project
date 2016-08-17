@@ -27,6 +27,7 @@
     'data': [
         'view/openacademy_course_view.xml',
         'view/openacademy_session_view.xml',
+        'view/partner.xml',
         # 'security/ir.model.access.csv',
         #'templates.xml',
     ],
