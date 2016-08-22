@@ -54,7 +54,7 @@ msgstr "Agregar atendientes"
 #. module: openacademy
 #: model:ir.ui.menu,name:openacademy.menu_launch_session_wizard
 msgid "Add Attendees massive"
-msgstr "Add Attendees massive"
+msgstr "Agregar asistentes masivo"
 
 #. module: openacademy
 #: model:ir.model.fields,field_description:openacademy.field_res_partner_session_ids
@@ -413,11 +413,6 @@ msgstr "openacademy.openacademy_wizard"
 #: model:ir.model,name:openacademy.model_openacademy_session
 msgid "openacademy.session"
 msgstr "openacademy.session"
-
-#. module: openacademy
-#: model:ir.model,name:openacademy.model_openacademy_wizard
-msgid "openacademy.wizard"
-msgstr "openacademy.wizard"
 
 #. module: openacademy
 #: model:ir.ui.view,arch_db:openacademy.wizard_form_view

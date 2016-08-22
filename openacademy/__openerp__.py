@@ -32,6 +32,7 @@
         'security/security.xml',
         'security/ir.model.access.csv',
         'view/openacademy_session_wizard.xml',
+        'report/openacademy_session_report.xml',
         #'templates.xml',
     ],
     # only loaded in demonstration mode
