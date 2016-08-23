@@ -367,7 +367,7 @@ msgstr "Subscribe"
 #. module: openacademy
 #: model:ir.model.fields,field_description:openacademy.field_openacademy_session_taken_seats
 msgid "Taken seats"
-msgstr "Taken seats"
+msgstr "Asientos tomados"
 
 #. module: openacademy
 #: model:res.partner.category,name:openacademy.teacher1
