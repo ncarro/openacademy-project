@@ -28,12 +28,35 @@ class GlobalTestOpenAcademyCourse(TransactionCase):
 
     # Method of test startswith 'def test_*(self):'
     @mute_logger('openerp.sql_db')
-    def test_01_same_name_description(self):
+    def test_10_same_name_scription(self):
         '''
         Test create a course with same name and description
         '''
         with self.assertRaisesRegexp(
                 IntegrityError,
-                'new row for relation "openacademy_course" violates check constraint "openacademy_course_name_description_check"'
+                'new row for relation "openacademy_course" violates'
+                ' check constraint "openacademy_course_name_description_check"'
                 ):
             self.create_course('test', 'test', None)
+
+    @mute_logger('openerp.sql_db')
+    def test_20_two_courses_same_name(self):
+        '''
+        Test create two courses with same name
+        '''
+        self.create_course('test1', 'test_description', None)
+        with self.assertRaisesRegexp(
+                IntegrityError,
+                'duplicate key value violates unique'
+                ' constraint "openacademy_course_name_unique"'
+                ):
+            self.create_course('test1', 'test_description', None)
+
+    def test_15_duplicate_course(self):
+        '''
+        Test to duplicate a course and check thar worlks fine
+        '''
+        course = self.env.ref('openacademy.course0')
+        course_id = course.copy()
+        print "course_id", course_id
+
