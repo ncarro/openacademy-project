@@ -15,7 +15,7 @@
     'website': "http://sisinfo.uy",
 
     # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
+    #
     # for the full list
     'category': 'Test',
     'version': '0.1',
@@ -34,11 +34,10 @@
         'view/openacademy_session_wizard.xml',
         'view/session_board.xml',
         'report/openacademy_session_report.xml',
-        #'templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/openacademy_course_demo.xml',
     ],
-    'installable':True,
+    'installable': True,
 }

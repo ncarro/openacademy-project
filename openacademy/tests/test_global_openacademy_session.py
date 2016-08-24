@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from psycopg2 import IntegrityError
-
 from openerp.tests.common import TransactionCase
-from openerp.tools import mute_logger
 from openerp.exceptions import ValidationError
+
 
 class GlobalTestOpenAcademySession(TransactionCase):
     '''
@@ -17,7 +15,6 @@ class GlobalTestOpenAcademySession(TransactionCase):
         self.partner = self.env.ref('base.res_partner_10')
         self.course = self.env.ref('openacademy.course0')
         self.partner_attende = self.env.ref('base.res_partner_2')
-
 
     def test_10_instructor_is_attende(self):
         '''
@@ -46,11 +43,13 @@ class GlobalTestOpenAcademySession(TransactionCase):
             'course_id': self.course.id,
             })
         # Check initial state
-        self.assertEqual(session_test.state, 'draft', 'Initial State should be in draft')
+        self.assertEqual(session_test.state, 'draft',
+                         'Initial State should be in draft')
 
         # Change state and check it
         session_test.signal_workflow('button_confirm')
-        self.assertEqual(session_test.state, 'confirmed', "Signal confirm didn't work")
+        self.assertEqual(session_test.state, 'confirmed',
+                         "Signal confirm didn't work")
 
         # Change state and check it
         session_test.signal_workflow('button_done')

@@ -4,16 +4,18 @@ This model create model of Course
 '''
 from openerp import models, fields, api
 
+
 class Course(models.Model):
     '''
     This class create model of course
     '''
     _name = 'openacademy.course'  # Model odoo name
 
-    name = fields.Char(string="Title", required=True)  # Field reserved
+    name = fields.Char(string="Title", required=True)
     description = fields.Text(string='Description')
     responsible_id = fields.Many2one('res.users',
-                                      ondelete='set null', string="Responsible", index=True)
+                                     ondelete='set null',
+                                     string="Responsible", index=True)
     session_ids = fields.One2many(
         'openacademy.session', 'course_id', string="Sessions")
 
@@ -40,4 +42,3 @@ class Course(models.Model):
          'UNIQUE(name)',
          "The course title must be unique"),
     ]
-

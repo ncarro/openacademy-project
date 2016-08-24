@@ -5,6 +5,7 @@ from psycopg2 import IntegrityError
 from openerp.tests.common import TransactionCase
 from openerp.tools import mute_logger
 
+
 class GlobalTestOpenAcademyCourse(TransactionCase):
     '''
     Global tests
@@ -57,5 +58,4 @@ class GlobalTestOpenAcademyCourse(TransactionCase):
         Test to duplicate a course and check thar worlks fine
         '''
         course = self.env.ref('openacademy.course0')
-        course_id = course.copy()
-
+        course.copy()
